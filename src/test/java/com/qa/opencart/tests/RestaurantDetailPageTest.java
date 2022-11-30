@@ -1,5 +1,8 @@
 package com.qa.opencart.tests;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -43,6 +46,14 @@ public class RestaurantDetailPageTest extends BaseTest{
 		String restName=rdp.nameOfRestaurantPresent();
 		System.out.println("Restaurant Name is - "+restName);
 		Assert.assertEquals(restName, Constants.RESTAURANT_NAME_IS);
+	}
+	
+	@Test
+	public void isRestaurantImageExitsTest()
+	{
+
+		rdp.getrestaurantImage();
+		
 	}
 
 	
