@@ -18,7 +18,7 @@ public class RestaurantDetailPage {
 	private By loginLink = By.linkText("Log in");
 	private By restaurantName = By.xpath("//h1[normalize-space()='Tamasha']");
 //	private By totalRestaurantImage = By.xpath("//img[@class='rdp-banner_img']");
-	private By totalRestaurantImage = By.tagName("a");
+	private By totalRestaurantImage = By.xpath("//div[@class='rdp-banner restnt-pics-slider']//div//a//img");
 
 	public RestaurantDetailPage(WebDriver driver) {
 		this.driver = driver;
@@ -45,22 +45,22 @@ public class RestaurantDetailPage {
 	}
 
 	public void getrestaurantImage() {
-		
-		List<WebElement> linklist =elementUtil.getElements(totalRestaurantImage);
 
-		System.out.println("Total link: " + linklist.size());
+		List<WebElement> totalImageCount = elementUtil.getElements(totalRestaurantImage);
 
-		for (WebElement e : linklist) {
-			String hrefVal = e.getAttribute(Constants.RDP_LINK_VALUE);
-			
-			String srcVal = e.getAttribute(Constants.RDP_SRC_VALUE);
-			
-			
-			String text = e.getText();
-			
-			System.out.println(text+ " : "+hrefVal + " : " +srcVal );
-			
-//			System.out.println(hrefVal + ":" + text);
+		System.out.println("Total link: " + totalImageCount.size());
+
+		for (WebElement webElement : totalImageCount) {
+
+			String totalTitle = webElement.getAttribute(Constants.RDP_LINK_VALUE);
+			System.out.println(totalTitle);
+
+			if (totalTitle.equalsIgnoreCase("Tamasha Photos")) {
+				String srcVal = webElement.getAttribute(Constants.RDP_SRC_VALUE);
+				System.out.println("Restaurant Image Link :- " + srcVal);
+
+			}
+
 		}
 
 	}
