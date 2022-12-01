@@ -9,6 +9,4 @@ public class Constants {
 	public static final String RESTAURANT_NAME_IS = "Tamasha";
 	public static final String RDP_LINK_VALUE = "title";
 	public static final String RDP_SRC_VALUE = "data-src";
-
-
 }
