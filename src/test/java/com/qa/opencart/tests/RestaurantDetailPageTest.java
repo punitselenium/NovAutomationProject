@@ -10,51 +10,46 @@ import org.testng.annotations.Test;
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.utils.Constants;
 
-public class RestaurantDetailPageTest extends BaseTest{
-	
+public class RestaurantDetailPageTest extends BaseTest {
+
 	// this concept is page chaining model
 	//
 	@BeforeClass
-	public void restaurantDetailpageSetUp() throws InterruptedException
-	{
-		rdp=homepage.handleFrame();
+	public void restaurantDetailpageSetUp() throws InterruptedException {
+		rdp = homepage.handleFrame();
 
-		rdp=homepage.clickRestaurant();
+		rdp = homepage.clickRestaurant();
 	}
-	
+
 	@Test
-	public void restaurantDetailTitleTest() 
-	{
-	String title =rdp.getRestaurantDetailTitle();	
-		System.out.println("Your account page title is :="+title);
+	public void restaurantDetailTitleTest() {
+		String title = rdp.getRestaurantDetailTitle();
+		System.out.println("Your account page title is :=" + title);
 		Assert.assertEquals(title, Constants.RESTAURANT_DETAIL_PAGE_TITLE);
 	}
-	
+
 	@Test
-	public void isLoginLinkExistTest()
-	{
+	public void isLoginLinkExistTest() {
 		Assert.assertTrue(rdp.isLoginLinkExist());
 	}
-	
+
 	@Test
 	public void isSearchFieldExistTest() {
 		Assert.assertTrue(rdp.isSearchFieldExist());
 	}
-	
+
 	@Test
 	public void nameOfRestaurantPresentTest() {
-		String restName=rdp.nameOfRestaurantPresent();
-		System.out.println("Restaurant Name is - "+restName);
+		String restName = rdp.nameOfRestaurantPresent();
+		System.out.println("Restaurant Name is - " + restName);
 		Assert.assertEquals(restName, Constants.RESTAURANT_NAME_IS);
 	}
-	
-	@Test
-	public void isRestaurantImageExitsTest()
-	{
+
+	@Test(enabled = false)
+	public void isRestaurantImageExitsTest() {
 
 		rdp.getrestaurantImage();
-		
+
 	}
 
-	
 }

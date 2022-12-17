@@ -18,7 +18,7 @@ public class RestaurantDetailPage {
 	private By loginLink = By.linkText("Log in");
 	private By restaurantName = By.xpath("//h1[normalize-space()='Tamasha']");
 //	private By totalRestaurantImage = By.xpath("//img[@class='rdp-banner_img']");
-	private By totalRestaurantImage = By.xpath("//div[@class='rdp-banner restnt-pics-slider']//div//a//img");
+	private By totalRestaurantImage = By.xpath("//div[@cla	ss='rdp-banner restnt-pics-slider']//div//a//img");
 
 	public RestaurantDetailPage(WebDriver driver) {
 		this.driver = driver;
