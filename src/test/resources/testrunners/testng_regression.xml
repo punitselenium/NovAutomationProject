@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="App test Suite" thread-count="1" parallel="tests" verbose="4">
+<suite name="App test Suite" thread-count="3" parallel="tests" verbose="4">
 
 	<test name="Dineout Home Page Test ">
 
