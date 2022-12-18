@@ -46,7 +46,7 @@ public class RestaurantDetailPageTest extends BaseTest {
 		Assert.assertEquals(restName, Constants.RESTAURANT_NAME_IS);
 	}
 
-	@Ignore
+	@Test(enabled = true)
 	public void isRestaurantImageExitsTest() {
 
 		rdp.getrestaurantImage();
