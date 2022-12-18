@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
@@ -45,7 +46,7 @@ public class RestaurantDetailPageTest extends BaseTest {
 		Assert.assertEquals(restName, Constants.RESTAURANT_NAME_IS);
 	}
 
-	@Test(enabled = false)
+	@Ignore
 	public void isRestaurantImageExitsTest() {
 
 		rdp.getrestaurantImage();
